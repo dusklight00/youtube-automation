@@ -1,8 +1,7 @@
-from engine.processing import create_image_video
+from engine.processing import create_image_video_of_audio_length
 
-create_image_video(
+create_image_video_of_audio_length(
     image_path="background.png",
-    output_path="output4.mp4",
-    video_length=20,
-    fps=30
+    audio_path="output.mp3",
+    output_path="output1.mp4"
 )

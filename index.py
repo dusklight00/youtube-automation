@@ -1,9 +1,12 @@
-from engine.process import concatenate_audio
+from wrappers.vidgear_wrapper import create_write_gear_instance
+import cv2
+from tqdm import tqdm
 
+image = cv2.imread("background.png")
 
-audio_paths = [
-    "audio.mp3",
-    "audio.mp3"
-]
+writer = create_write_gear_instance("output1.mp4")
 
-concatenate_audio(audio_paths, "output.mp3")
+for i in tqdm(range(1000)):
+    writer.write(image)
+
+writer.close()

@@ -1,13 +1,7 @@
-from moviepy.editor import concatenate_audioclips, AudioFileClip, VideoFileClip
+from moviepy.editor import AudioFileClip, VideoFileClip
 from wrappers.vidgear_wrapper import create_writer_instance
 from tqdm import tqdm
 import cv2
-
-
-def concatenate_audio(audio_clip_paths, output_path):
-    clips = [AudioFileClip(path) for path in audio_clip_paths]
-    final_clip = concatenate_audioclips(clips)
-    final_clip.write_audiofile(output_path)
 
 
 def create_image_video(image_path, output_path, video_length, fps=30):

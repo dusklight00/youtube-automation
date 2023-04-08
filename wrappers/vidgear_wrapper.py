@@ -1,7 +1,7 @@
 from vidgear.gears import WriteGear
 
 
-def create_write_gear_instance(output_file):
+def create_writer_instance(output_file, fps=30):
     # output_params = {
     #     "-c:v": "libx264",
     #     "-crf": 22,
@@ -13,6 +13,8 @@ def create_write_gear_instance(output_file):
     #     "-clones": ["-f", "segment"],
     # }
 
+    output_params = {"-input_framerate": fps}
+
     # Define writer with defined parameters
-    writer = WriteGear(output=output_file, logging=True)
+    writer = WriteGear(output=output_file, logging=True, **output_params)
     return writer

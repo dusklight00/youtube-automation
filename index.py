@@ -1,12 +1,8 @@
-from wrappers.vidgear_wrapper import create_write_gear_instance
-import cv2
-from tqdm import tqdm
+from engine.processing import create_image_video
 
-image = cv2.imread("background.png")
-
-writer = create_write_gear_instance("output1.mp4")
-
-for i in tqdm(range(1000)):
-    writer.write(image)
-
-writer.close()
+create_image_video(
+    image_path="background.png",
+    output_path="output4.mp4",
+    video_length=20,
+    fps=30
+)
